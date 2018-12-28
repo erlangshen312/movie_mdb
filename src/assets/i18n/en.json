@@ -1,0 +1,17 @@
+{
+  "CANCEL": "Cancel",
+  "SAVE": "Save",
+  "MAIL": "Email",
+  "SOCIAL_NETWORK": "Social network",
+  "CHAT": "Chat",
+  "VIDEO_CHAT": "Video chat",
+  "VIDEO_PORTAL": "Video portal",
+  "NEWS": "News",
+  "FILTER": "Filter",
+  "RECENT_NEWS": "Recent news",
+  "ECONOMIC_NEWS": "Economic news",
+  "CULTURE_NEWS": "Culture news",
+  "LOGIN": "Signin",
+  "CONTACT_TYPE": "Contact type"
+
+}
