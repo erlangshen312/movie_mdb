@@ -11,7 +11,9 @@
 }
 
 @media screen and (max-width: 345px) {
-
+    .container{
+        max-width: 100%;
+    }
 }
 
 @media screen and (min-width: 576px) {

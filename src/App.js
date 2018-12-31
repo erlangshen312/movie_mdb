@@ -8,9 +8,9 @@ class App extends Component {
         return (
             <div>
                 <Appbar/>
-                <div>
+                <Grid className="container">
                     <Dashboard/>
-                </div>
+                </Grid>
             </div>
         );
     }

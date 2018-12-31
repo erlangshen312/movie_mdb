@@ -19,12 +19,12 @@ import {
 import axios from 'axios';
 
 
-export default class Dashboard extends React.Component {
+export default class Popular extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            movieList: [],
+            popularList: [],
             lang: AppStorage.get('lang') || 'ru',
         };
     }
@@ -38,7 +38,7 @@ export default class Dashboard extends React.Component {
             .get(URL_LIST + '' + API_KEY + LANG_EN)
             .then(({data}) => {
                 this.setState({
-                    movieList: data.results
+                    popularList: data.results
                 });
             })
             .catch((err) => {
@@ -48,19 +48,18 @@ export default class Dashboard extends React.Component {
 
     render() {
 
-        const {movieList} = this.state;
-        console.log(movieList);
+        const {popularList} = this.state;
+        console.log(popularList);
 
-        this.MovieLists = movieList && movieList.map((movie) =>
-            <Grid key={movie.id} item xs={6} sm={4} md={4} lg={2}>
+        this.MovieLists = popularList && popularList.map((popular) =>
+            <Grid key={popular.id} item xs={6} sm={4} md={4} lg={2}>
                 <Card className="card">
                     <CardActionArea>
-                        <CardMedia className="content">
-                            <div className="content-overlay"></div>
-                            <img src={URL_IMG + IMG_SIZE_LARGE + movie.poster_path} className="content-image"/>
-                            <div className="content-details fadeIn-bottom">
-                                <Typography variant="h6" className="content-title">{movie.title}</Typography>
-                                <Typography component="p" className="content-text">{movie.vote_average}</Typography>
+                        <CardMedia>
+                            <img src={URL_IMG + IMG_SIZE_LARGE + popular.poster_path} className="poster"/>
+                            <div className="shower">
+                                <Typography variant="h6" className="text">{popular.title}</Typography>
+                                <Typography component="p" className="text">{popular.vote_average}</Typography>
                             </div>
                         </CardMedia>
                     </CardActionArea>
@@ -76,8 +75,3 @@ export default class Dashboard extends React.Component {
         );
     }
 }
-
-
-// https://image.tmdb.org/t/p//uTVGku4LibMGyKgQvjBtv3OYfAX.jpg
-// https://image.tmdb.org/t/p/w342//i2dF9UxOeb77CAJrOflj0RpqJRF.jpg
-// https://image.tmdb.org/t/p/w342//rGfGfgL2pEPCfhIvqHXieXFn7gp.jpg
