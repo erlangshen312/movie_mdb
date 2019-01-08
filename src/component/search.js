@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Grid, Icon, IconButton, InputBase, TextField,} from '@material-ui/core';
+import {InputBase,} from '@material-ui/core';
 import {
     API_KEY,
     LANG_EN,
@@ -9,7 +9,6 @@ import {
 
 import axios from 'axios';
 import ListItem from "@material-ui/core/ListItem/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText/ListItemText";
 import List from "@material-ui/core/List/List";
 
@@ -21,7 +20,7 @@ export default class Search extends React.Component {
             search: [],
             name: '',
 
-        }
+        };
     }
 
     componentDidMount() {
@@ -51,14 +50,17 @@ export default class Search extends React.Component {
         this.setState({[name]: event.target.value}, () => this.getSearch(name));
     };
 
+
+    goToDetail = (e, id) => {
+        e.preventDefault();
+        this.props.history.push("/detail/" + id);
+    };
+
     render() {
         const {search, name,} = this.state;
-
-        console.log(search, name);
-
         this.Search = search && search.map((s) =>
             <List key={s.id} component="nav">
-                <ListItem button>
+                <ListItem button onClick={(e)=>this.goToDetail(e, s.id)} >
                     <ListItemText>
                         {s.title}
                     </ListItemText>
@@ -71,11 +73,10 @@ export default class Search extends React.Component {
             <div>
 
                 <InputBase
-                    placeholder="Search…"
+                    placeholder="Let's search love movie"
                     label="Name"
                     value={name}
                     onChange={this.handleChange('name')}
-                    margin="normal"
                 />
 
                 {this.Search}

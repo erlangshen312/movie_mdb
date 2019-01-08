@@ -22,10 +22,16 @@ body,
     height: 100%;
     width: 100%;
     position: relative;
+
 }
 
 .appbar-style {
     justify-content: space-between;
+}
+
+.appbar-style a {
+    text-decoration: none;
+    color: #fff;
 }
 
 *, *:before, *:after {
@@ -36,18 +42,28 @@ body,
     box-sizing: border-box;
 }
 
-.dashboard {
-
+.dashboard .detail{
+    font-size: 14px !important;
 }
 
-.appbar-search {
+.dashboard-bottom{
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0px;
+    padding: 40px;
+}
 
-    height: 40px;
+
+.search {
+
+    border: 1px solid #dcdcdc;
     display: flex;
+    padding: 10px;
+    width: 100%;
     position: relative;
     background-color: #ffffff;
     margin: 2px;
-    padding-left: 5px;
     border-radius: 5px;
 }
 
@@ -162,24 +178,95 @@ body,
     margin-top: 20px;
 }
 
-.detail a{
+.detail {
+    margin: 10px;
+}
+
+.detail a {
     text-decoration: none;
+}
+
+.detail .detail-poster-img {
+    width: 22.5%;
+    margin: 10px 10px 10px 0;
 }
 
 .detail .detail-img {
     width: 60%;
+    margin: 10px;
 }
 
-.detail > span{
+.pro {
+    position: relative;
+    top: 100px;
+    margin: 0 10px 0 10px;
+}
+
+.pro-img {
+    position: absolute;
+    bottom: 55px;
+    margin: 10px 0 10px 0;
+    width: 60px;
+}
+
+.detail > span {
     color: #393939;
 }
 
-.detail .detail-overview{
-    margin: 10px 0 10px 0 ;
+.detail .detail-overview {
+    margin: 10px 0 10px 0;
 }
+
+.detail-overview h6{
+    margin: 30px 0 10px 0;
+}
+
 .detail .detail-row {
     display: flex;
-    margin: 10px 0 10px 0 ;
-
+    margin: 10px 0 10px 0;
 }
 
+.detail .detail-row .company{
+    margin: 10px 0 10px 0;
+}
+
+.detail .detail-genres {
+    display: flex;
+}
+
+.detail .detail-genres h6{
+    margin: 10px 0;
+}
+
+.detail .detail-video{
+    margin: 20px 0 10px 0 !important;
+}
+
+.detail .detail-rec{
+    position: relative;
+    top: 150px;
+}
+
+.detail .detail-rec h6{
+    margin: 10px 0 20px 0;
+}
+
+.fw-900{
+    font-weight: 900 !important;
+}
+
+.fw-700{
+    font-weight: 700 !important;
+}
+
+.fw-600{
+    font-weight: 600 !important;
+}
+
+.fw-500{
+    font-weight: 500 !important;
+}
+
+.fw-400{
+    font-weight: 400 !important;
+}

@@ -15,3 +15,4 @@ export const API_KEY = '?api_key=f113202b127ee7f3c23d1ccf014d98a7';
 export const API_KEY_ALT = '&api_key=f113202b127ee7f3c23d1ccf014d98a7';
 export const LANG_EN = '&language=en-US';
 export const QUERY = '&query=';
+export const RECOMENDATION = '/recommendations';

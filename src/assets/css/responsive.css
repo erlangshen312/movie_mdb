@@ -8,6 +8,10 @@
 
 @media screen and (max-width: 575px) {
 
+    .detail-big-content{
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 345px) {
@@ -21,8 +25,13 @@
         max-width: 100%;
     }
     .detail{
-        margin: 20px;
+        margin: 10px;
     }
+
+    .detail-min-content{
+        display: none;
+    }
+
 }
 
 @media screen and (min-width: 768px) {

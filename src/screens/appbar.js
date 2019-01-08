@@ -1,27 +1,20 @@
 import React, {Component} from 'react';
-import {AppBar, Toolbar, IconButton, Icon, Typography, InputBase, Button} from "@material-ui/core";
-import Search from "../component/search";
+import {AppBar, Toolbar, Typography} from "@material-ui/core";
+import {Link} from "react-router-dom";
 
 export default class Appbar extends Component {
     render() {
+        console.log({...this});
+
         return (
             <div>
                 <AppBar position="static">
                     <Toolbar className="appbar-style">
                         <Typography variant="h6" color="inherit">
-                            Movie Store
+                            <Link to={"/"}>
+                                Movie Store
+                            </Link>
                         </Typography>
-                        <div>
-                            <Button href="/" color="inherit">
-                                Main
-                            </Button>
-                            <Button href="/about" color="inherit">
-                                About
-                            </Button>
-                        </div>
-                        <div className="appbar-search">
-                            <Search/>
-                        </div>
                     </Toolbar>
                 </AppBar>
             </div>

@@ -11,7 +11,8 @@ import {
     LANG_EN
 } from '../const';
 import axios from 'axios';
-import Genre from "../component/genre";
+import Search from "../component/search";
+import Button from "@material-ui/core/Button/Button";
 
 
 export default class Dashboard extends React.Component {
@@ -20,17 +21,25 @@ export default class Dashboard extends React.Component {
 
         this.state = {
             movieList: [],
+            menu: false,
+            page: parseInt(this.props.match.params.page) || 1,
         };
-        console.log(this.props)
+
     }
 
     componentDidMount() {
-        this.getMovie();
+        const page = this.props.match.params.page || 1;
+        this.setState({page: parseInt(page)}, () => this.getMovies());
     }
 
-    getMovie = () => {
+    componentWillReceiveProps(props){
+        const page = props.match.params.page || 1;
+        this.setState({page: parseInt(page)}, () => this.getMovies());
+    }
+
+    getMovies = () => {
         axios
-            .get(URL_LIST + '' + API_KEY + LANG_EN)
+            .get(URL_LIST + '' + API_KEY + LANG_EN + "&page=" + this.state.page)
             .then(({data}) => {
                 this.setState({
                     movieList: data.results
@@ -46,10 +55,17 @@ export default class Dashboard extends React.Component {
         this.props.history.push("/detail/" + id);
     };
 
-    render() {
+    decrement = () => {
+        const {page} = this.state;
+        this.props.history.push('/page/' + (page - 1))
+    };
+    increment = () => {
+        const {page} = this.state;
+        this.props.history.push('/page/' + (page + 1))
+    };
 
-        const {movieList, movie,} = this.state;
-        console.log(movie);
+    render() {
+        const {movieList, page} = this.state;
 
         this.MovieLists = movieList && movieList.map((movie) =>
             <Grid key={movie.id} item xs={6} sm={4} md={4} lg={2}>
@@ -68,15 +84,28 @@ export default class Dashboard extends React.Component {
             </Grid>
         );
 
+        // this.PaginationLists = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16].map((index, pag) => {
+        //         <Button key={index}>{pag}</Button>
+        // });
         return (
             <Grid container spacing={16} className="dashboard">
+                <div className="search">
+                    <Search {...this.props}/>
+                </div>
 
-                    <Genre/>
 
-                {this.MovieLists}
+                <div className="dashboard-bottom">
+                    <Button onClick={() => this.decrement()} disabled={page <= 1}>Previous Page</Button>
+                    <Button onClick={() => this.increment()}>Next Page</Button>
+                </div>
 
+                {this.MovieLists ? this.MovieLists : "Now is loading"}
+
+                <div className="dashboard-bottom">
+                    <Button onClick={() => this.decrement()} disabled={page <= 1}>Previous Page</Button>
+                    <Button onClick={() => this.increment()}>Next Page</Button>
+                </div>
             </Grid>
-
         );
     }
 }
