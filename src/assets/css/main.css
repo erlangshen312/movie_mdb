@@ -6,7 +6,10 @@ body,
     padding: 0;
     height: 100%;
 }
-.container{
+
+.container {
+    position: relative;
+    width: 100%;
     margin: auto;
 }
 
@@ -21,23 +24,26 @@ body,
     position: relative;
 }
 
-.appbar-style{
+.appbar-style {
     justify-content: space-between;
 }
 
-*, *:before, *:after{
+*, *:before, *:after {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing:border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-.dashboard{
+.dashboard {
 
 }
-.appbar-search{
 
+.appbar-search {
+
+    height: 40px;
+    display: flex;
     position: relative;
     background-color: #ffffff;
     margin: 2px;
@@ -45,7 +51,7 @@ body,
     border-radius: 5px;
 }
 
-.card .content-image{
+.card .content-image {
     width: 100%;
     opacity: 1;
     display: block;
@@ -62,7 +68,7 @@ body,
     opacity: 1;
 }
 
-.card .shower{
+.card .shower {
     transition: .5s ease;
     opacity: 0;
     position: absolute;
@@ -73,7 +79,7 @@ body,
     text-align: center;
 }
 
-.card  .shower .text {
+.card .shower .text {
     background-color: #4CAF50;
     color: white;
     font-size: 16px;
@@ -89,7 +95,7 @@ body,
 }
 
 .content .content-overlay {
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     position: absolute;
     height: 100%;
     width: 100%;
@@ -103,11 +109,11 @@ body,
     transition: all 0.4s ease-in-out 0s;
 }
 
-.content:hover .content-overlay{
+.content:hover .content-overlay {
     opacity: 1;
 }
 
-.content-image{
+.content-image {
     width: 100%;
 }
 
@@ -128,13 +134,13 @@ body,
     transition: all 0.3s ease-in-out 0s;
 }
 
-.content:hover .content-details{
+.content:hover .content-details {
     top: 50%;
     left: 50%;
     opacity: 1;
 }
 
-.content-details h6{
+.content-details h6 {
     color: #fff;
     font-weight: 500;
     letter-spacing: 0.15em;
@@ -143,11 +149,37 @@ body,
     font-size: 12px;
 }
 
-.content-details p{
+.content-details p {
     color: #fff;
     font-size: 0.8em;
 }
 
-.fadeIn-bottom{
+.fadeIn-bottom {
     top: 80%;
 }
+
+.app-body {
+    margin-top: 20px;
+}
+
+.detail a{
+    text-decoration: none;
+}
+
+.detail .detail-img {
+    width: 60%;
+}
+
+.detail > span{
+    color: #393939;
+}
+
+.detail .detail-overview{
+    margin: 10px 0 10px 0 ;
+}
+.detail .detail-row {
+    display: flex;
+    margin: 10px 0 10px 0 ;
+
+}
+

@@ -1,16 +1,6 @@
 import React, {Component} from 'react';
-import {AppBar, Toolbar, IconButton, Icon, Typography, InputBase} from "@material-ui/core";
-import {
-    URL_LIST,
-    URL_SEARCH,
-    URL_DETAIL,
-    URL_PERSON,
-    URL_CAST,
-    URL_VIDEO,
-    API_KEY,
-    API_KEY_ALT,
-    LANG_EN
-} from '../const';
+import {AppBar, Toolbar, IconButton, Icon, Typography, InputBase, Button} from "@material-ui/core";
+import Search from "../component/search";
 
 export default class Appbar extends Component {
     render() {
@@ -21,13 +11,16 @@ export default class Appbar extends Component {
                         <Typography variant="h6" color="inherit">
                             Movie Store
                         </Typography>
+                        <div>
+                            <Button href="/" color="inherit">
+                                Main
+                            </Button>
+                            <Button href="/about" color="inherit">
+                                About
+                            </Button>
+                        </div>
                         <div className="appbar-search">
-                            <InputBase
-                                placeholder="Search…"
-                            />
-                            <IconButton>
-                                <Icon>search</Icon>
-                            </IconButton>
+                            <Search/>
                         </div>
                     </Toolbar>
                 </AppBar>

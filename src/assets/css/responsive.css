@@ -20,12 +20,16 @@
     .container{
         max-width: 100%;
     }
+    .detail{
+        margin: 20px;
+    }
 }
 
 @media screen and (min-width: 768px) {
     .container{
         max-width: 720px;
     }
+
 }
 
 @media screen and (min-width: 992px) {
@@ -36,7 +40,7 @@
 
 @media screen and (min-width: 1200px) {
     .container{
-        max-width: 1140px;
+        max-width: 1140px !important;
     }
 }
 

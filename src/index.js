@@ -14,7 +14,7 @@ import './assets/css/responsive.css';
 
 
 ReactDOM.render((
-    <MuiThemeProvider>
+<MuiThemeProvider theme={createMuiTheme()}>
         <App/>
     </MuiThemeProvider>
 ), document.getElementById('root'));
