@@ -15,5 +15,5 @@ This project is created by React. I used Movie Database API (https://developers.
    
    
 ## Photo
-https://github.com/zhumanasyrov/shenfilm.github.io/tree/master/image/mapn.png
-https://github.com/zhumanasyrov/shenfilm.github.io/tree/master/image/detail.png
+https://github.com/zhumanasyrov/shenfilm.github.io/blob/master/image/main.PNG
+https://github.com/zhumanasyrov/shenfilm.github.io/tree/master/image/detail.PNG
