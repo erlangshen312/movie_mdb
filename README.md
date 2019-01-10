@@ -10,8 +10,9 @@ This project is created by React. I used Movie Database API (https://developers.
   - View detail movie info trailers, poster, content
   
 ## Project conf
-   - npm install 
-   - npm start on (localhost:XXXX)
+   - After clone project (cd shenfilm.github.io)
+   - npm install -f
+   - npm start 
    
    
 ## Photo
