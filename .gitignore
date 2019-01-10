@@ -2,14 +2,13 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
 # testing
 /coverage
 
 # production
 /build
+.idea
 
 # misc
 .DS_Store
@@ -22,6 +21,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# redactor
-.idea
-/workspace.xml
