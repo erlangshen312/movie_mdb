@@ -4,8 +4,6 @@ import {URL_DETAIL, API_KEY, LANG_EN, URL_IMG, IMG_SIZE_LARGE} from '../const';
 import axios from 'axios';
 import Recommendation from "../component/recommendation";
 import Video from "../component/video";
-import IconButton from "@material-ui/core/IconButton/IconButton";
-import Icon from "@material-ui/core/Icon/Icon";
 
 export default class Detail extends React.Component {
 
@@ -13,9 +11,8 @@ export default class Detail extends React.Component {
         super(props);
         this.state = {
             movie: {},
-            id: this.props.match.params.id
+            id: this.props.match.params.id  // GET PROPS ID FROM DASHBOARD OR RECOMMENDATION
         };
-        console.log("THIS PROPS FROM DETAIL", this.props);
     }
 
     componentDidMount() {
@@ -38,27 +35,24 @@ export default class Detail extends React.Component {
 
     render() {
         const {movie} = this.state;
-        console.log(movie);
 
-        this.Pro = movie.production_companies && movie.production_companies.map((pr) =>
-            <div key={pr.id} className="pro">
-                {pr.logo_path && <img src={URL_IMG + IMG_SIZE_LARGE + pr.logo_path} className="pro-img"/>}
-                <Typography>{pr.name}</Typography>
-                <Typography>{pr.origin_country}</Typography>
+        this.Pro = movie.production_companies && movie.production_companies.map((pc) =>
+            <div key={pc.id} className="pro">
+                {pc.logo_path && <img src={URL_IMG + IMG_SIZE_LARGE + pc.logo_path} className="pro-img"/>}
+                <Typography>{pc.name}</Typography>
+                <Typography>{pc.origin_country}</Typography>
             </div>
         );
+
         this.Genres = movie.genres && movie.genres.map((genre) =>
             <div key={genre.id}>
                 <Typography variant={"subtitle1"}>{genre.name + ','}&nbsp;</Typography>
-                {/*<Typography>{genre.origin_country}</Typography>*/}
             </div>
         );
 
         return (
-
                 <Grid>
                     <div className="detail">
-
                         <Typography variant={"h2"} className="fw-900">{movie.title}</Typography>
                         <div className="detail-genres">
                             <Typography variant={"subtitle1"} className="fw-600"> Genres: </Typography>
