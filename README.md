@@ -1,3 +1,19 @@
+
+## Movie Web App / SHENFILMS
+
+This project is created by React. I used Movie Database API (https://developers.themoviedb.org/3/getting-started/introduction) to display data.
+
+## In project you can do:
+  - List of popular movies 
+  - Search movie 
+  - Recommendation similar movie
+  - View detail movie info trailers, poster, content
+  
+## Project conf
+   - npm install 
+   - npm start on (localhost:XXXX)
+   
+   
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
