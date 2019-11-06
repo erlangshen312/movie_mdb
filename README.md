@@ -1,7 +1,8 @@
 
-## Movie Web App / SHENFILMS
+## MOVIE PORTAL
 
-This project is created by React. I used Movie Database API (https://developers.themoviedb.org/3/getting-started/introduction) to display data.
+This project is created by React. I used Movie Database API 
+(https://developers.themoviedb.org/3/getting-started/introduction) to display data.
 
 ## In project you can do:
   - List of popular movies 
